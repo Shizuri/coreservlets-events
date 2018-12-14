@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title>Change colors</title>
+<link href="./css/lite-dark.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body styleClass="#{ccc.theme}">
+<h1 class="title">Change colors</h1>
+
+Sample text: #{ccc.theme}<br/>
+
+"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."<br/>
+"Не постои некој што ја сака болката, кој ја бара и ја посакува, едноставно затоа што е болка..."
+
+<h:form>
+  <h:commandButton value="Light" actionListener="#{ccc.setToLight}" immediate="true"/>
+  <h:commandButton value="Dark" actionListener="#{ccc.setToDark}" immediate="true"/>
+</h:form>
+
+<br/><br/>
+
+<h:form>
+	<h:selectOneRadio value="#{ccc.theme}"
+						onclick="submit()"
+						immediate="true">
+		<f:selectItems value="#{ccc.themes}"/>
+	</h:selectOneRadio>
+</h:form>
+
+</h:body></html>
